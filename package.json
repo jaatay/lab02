@@ -1,0 +1,26 @@
+{
+  "name": "lab02",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "start": "node index.js",
+    "lint": "eslint **/*.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaatay/lab02.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaatay/lab02/issues"
+  },
+  "homepage": "https://github.com/jaatay/lab02#readme",
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "jest": "^24.1.0"
+  }
+}
