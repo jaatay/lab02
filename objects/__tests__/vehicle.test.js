@@ -2,22 +2,75 @@
 
 const Vehicle = require('../vehicle-constructor');
 const classCar = require('../car');
+const classCycle = require('../motorcycle');
+const factoryVehicle = require('../vehicle-factory');
 
 describe('Vehicles', () => {
 
-  describe('Class Car', () => {
+  describe('Factory Car Class', () => {
+    let factoryTestCar = new factoryVehicle.CarFactory('factoryCar', 4);
+    let factoryTestBike = new factoryVehicle.BikeFactory('factoryBike', 2);
+
+    it('has a name property', () => {
+      expect(factoryTestCar.name).toBe('factoryCar');
+    });
+
+    it('can drive', () => {
+      expect(factoryTestCar.drive()).toBe('Moving Forward');
+    });
+
+    it('can stop', () => {
+      expect(factoryTestCar.stop()).toBe('Stopping');
+    });
+
+    it('has a name property', () => {
+      expect(factoryTestBike.name).toBe('factoryBike');
+    });
+
+    it('has dos wheels', () => {
+      expect(factoryTestBike.wheels).toBe(2);
+    });
+
+    it('bike can drive', () => {
+      expect(factoryTestBike.drive()).toBe('Moving Forward');
+    });
+
+    it('can do wheelie', () => {
+      expect(factoryTestBike.wheelie()).toBeTruthy();
+    });
+
+  });
+
+  describe('New Motorcycle Class', () => {
+    let testCycle = new classCycle('testCycle', 2);
+
+    it('can do wheelie', () => {
+      expect(testCycle.wheelie()).toBeTruthy();
+    });
+
+    it('has 2 wheels', () => {
+      expect(testCycle.wheels).toBe(2);
+    });
+
+    it('has a name property', () => {
+      expect(testCycle.name).toBe('testCycle');
+    });
+
+  });
+
+  describe('New Car Class', () => {
     let testCar = new classCar('test', 3);
 
-    it('exists', () => {
+    it('can go forward', () => {
       expect(testCar.drive()).toBe('Moving Forward');
     });
 
     it('has 3 wheels', () => {
-      expect(testCar.wheels.toBe(3));
+      expect(testCar.wheels).toBe(3);
     })
 
     it('has a name', () => {
-      expect(testCar.name.toBe('test'));
+      expect(testCar.name).toBe('test');
     })
   });
 
