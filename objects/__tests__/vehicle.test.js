@@ -1,8 +1,25 @@
 'use strict';
 
-const Vehicle = require('../constructor.js');
+const Vehicle = require('../vehicle-constructor');
+const classCar = require('../car');
 
 describe('Vehicles', () => {
+
+  describe('Class Car', () => {
+    let testCar = new classCar('test', 3);
+
+    it('exists', () => {
+      expect(testCar.drive()).toBe('Moving Forward');
+    });
+
+    it('has 3 wheels', () => {
+      expect(testCar.wheels.toBe(3));
+    })
+
+    it('has a name', () => {
+      expect(testCar.name.toBe('test'));
+    })
+  });
 
   describe('Car', () => {
 
