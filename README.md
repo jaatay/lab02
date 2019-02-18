@@ -4,6 +4,8 @@
 
 ### Author: Jesse Atay
 
+[![Build Status](https://travis-ci.org/jaatay/lab02.svg?branch=master)](https://travis-ci.org/jaatay/lab02)
+
 ### Links and Resources
 * [repo](https://github.com/jaatay/lab02)
 
